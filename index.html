@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyFin - Bankiros</title>
+    <link rel="stylesheet" href="./css/selectric.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="./assets/fontawesome/css/solid.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="top-content container">
+        <div class="top-content__inner">
+          <h1>Облигации в России</h1>
+          <div class="description">
+            <p id="description__content" class="description__content ellipsis"> Облигации федерального, субфедерального займа, еврооблигации и облигации самых известных компаний России. Изучайте стоимость облигаций и ее изменение, доходность, купонные выплаты и многие другие показатели. Чтобы узнать больше про облигации и инвестирование в ценные бумаги, посетите наш <a href="#" class="link">образовательный раздел</a> с множеством полезной информации. </p>
+            <button id="description__btn" class="description__btn btn-link" onclick="expandText('description__content', 'description__btn')"> Показать весь <i class="fa-solid fa-angle-down btn-link__icon"></i>
+            </button>
+          </div>
+        </div>
+        <div class="top-content__search search-container">
+          <form action="" class="search-container__form search-form">
+            <input id="search-input" class="search-form__input search-input" type="search" placeholder="Название или тикер" />
+          </form>
+          <button class="search-container__clear-btn" onclick="clearSearchInput('search-input')">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <div class="divider divider_main"></div>
+      <div class="middle-content container">
+        <h2>Всё об инвестициях</h2>
+        <div class="section-cards">
+          <div class="section-cards__item card card_iconed card-1">
+            <h3 class="card__title">Акции</h3>
+            <p class="card__text"> Покупка акций российских и мировых компаний </p>
+            <img src="./assets/images/img_akcii2.svg" alt="Акции" class="card__image" />
+            <button class="card__btn btn btn_primary"> Купить </button>
+          </div>
+          <div class="section-cards__item card card-2">
+            <h3 class="card__title">Облигации</h3>
+            <p class="card__text"> Инвестируйте в ценные бумаги и зарабатывайте на процентах </p>
+            <button class="card__btn btn btn_primary"> Подобрать </button>
+          </div>
+          <div class="section-cards__item card card-3">
+            <h3 class="card__title">Дивиденды</h3>
+            <p class="card__text"> Размеры дивидендов и даты выплат на календаре </p>
+            <button class="card__btn btn btn_default"> Подробнее </button>
+          </div>
+          <div class="section-cards__item card card_iconed card-4">
+            <h3 class="card__title"> Индивидуальный инвестиционный счет </h3>
+            <p class="card__text"> Откройте счет и увеличивайте доходность своих инвестиций </p>
+            <img src="./assets/images/img_iis.svg" alt="Индивидуальный инвестиционный счет" class="card__image" />
+            <button class="card__btn btn btn_primary"> Открыть ИИС </button>
+          </div>
+          <div class="section-cards__item card card_iconed card-5">
+            <h3 class="card__title">Брокеры</h3>
+            <p class="card__text"> Инвестируйте вместе с профессионалами. </p>
+            <img src="./assets/images/img_brokers.svg" alt="Брокеры" class="card__image" />
+            <button class="card__btn btn btn_default"> Выбрать </button>
+          </div>
+          <div class="section-cards__item card card-6">
+            <h3 class="card__title">Обучение</h3>
+            <p class="card__text"> Учитесь инвестировать БЕСПЛАТНО вместе с Банкирос </p>
+            <button class="card__btn btn btn_default"> Пройти обучение </button>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-content">
+        <div class="section-leaders section_bordered">
+          <div class="section-leaders__header">
+            <h2>Акции</h2>
+            <select class="select" id="stocks-select">
+              <option value="1">1 день</option>
+              <option value="7">1 неделя</option>
+              <option value="30">1 месяц</option>
+              <option value="365">1 год</option>
+            </select>
+          </div>
+          <div class="section__content">
+            <div class="tab-list-wrapper">
+              <ul class="tab-list">
+                <li id="list-item-1" class="tab-list__item list-item list-item_active" onclick="switchTab('tab-content', 1)"> Лидеры роста </li>
+                <li id="list-item-2" class="tab-list__item list-item" onclick="switchTab('tab-content', 2)"> TAB INACTIVE </li>
+              </ul>
+            </div>
+            <div id="tab-content" class="tab-list__content">
+              <div id="tab-1" class="tab tab_active table-wrapper">
+                <table class="table leaders-table table_minimal">
+                  <colgroup>
+                    <col style="width: 50%" />
+                    <col style="width: 25%" />
+                    <col style="width: 25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <td class="thead-col__ticker"> Тикер </td>
+                      <td class="thead-col__price"> Посл. цена </td>
+                      <td class="thead-col__difference"> Изм. </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/vtb-logo.png" alt="ВТБ банк" />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> ВТБ банк </a>
+                            <div class="ticker-cell__subtitle"> VTBR </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 4.790 <i class="fa-solid fa-ruble-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_green">
+                          <p>
+                            <i class="fa-solid fa-arrow-up"></i> 8.27 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/no-logo.png" alt='Пао "Русгидро"' />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> Пао «Русгидро» </a>
+                            <div class="ticker-cell__subtitle"> HYDR </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 0.0132 <i class="fa-solid fa-ruble-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_red">
+                          <p>
+                            <i class="fa-solid fa-arrow-down"></i> 4.83 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/disney-logo.png" alt="The Walt Disney Company" />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> The Walt Disney Company </a>
+                            <div class="ticker-cell__subtitle"> DIS-RM </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 10 900 <i class="fa-solid fa-dollar-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_green">
+                          <p>
+                            <i class="fa-solid fa-arrow-up"></i> 4.34 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/gazprom-logo.png" alt="Газпром" />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> Газпром </a>
+                            <div class="ticker-cell__subtitle"> GAZP </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 25.70 <i class="fa-solid fa-ruble-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_green">
+                          <p>
+                            <i class="fa-solid fa-arrow-up"></i> 4.34 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/disney-logo.png" alt="The Walt Disney Company" />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> The Walt Disney Company </a>
+                            <div class="ticker-cell__subtitle"> DIS-RM </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 10 900 <i class="fa-solid fa-dollar-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_green">
+                          <p>
+                            <i class="fa-solid fa-arrow-up"></i> 4.34 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="table-cell ticker-cell">
+                          <img class="ticker-cell__img" src="./assets/images/cisco-logo.png" alt="Cisco System, Inc." />
+                          <div class="ticker-cell__text">
+                            <a class="link link_primary ticker-cell__title" href=""> Cisco System, Inc. </a>
+                            <div class="ticker-cell__subtitle"> CSCO-RM </div>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="table-cell text-color"> 25.70 <i class="fa-solid fa-ruble-sign"></i>
+                        </p>
+                      </td>
+                      <td>
+                        <div class="table-cell difference-cell difference-cell_green">
+                          <p>
+                            <i class="fa-solid fa-arrow-up"></i> 4.34 %
+                          </p>
+                          <p> 0.36 <i class="fa-solid fa-ruble-sign"></i>
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div id="tab-2" class="tab">
+              <p>Скоро...</p>
+            </div>
+          </div>
+          <div class="section-leaders__footer">
+            <div class="leaders-footer__update"> Обновлено в 12:30 </div>
+            <a href="" class="link link_iconed">Больше лидеров роста <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="section-calendar section_bordered">
+          <div class="section-calendar__header">
+            <h2>Экономический календарь</h2>
+            <div class="section-calendar__subtitle subtitle"> Ноябрь 17 </div>
+          </div>
+          <div class="section-calendar__content calendar">
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time time_active"> 13:00 </div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_red"></div>
+              <div class="calendar-row__text"> Индекс цен на продовольствие </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time time_active"> 13:00 </div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_red"></div>
+              <div class="calendar-row__text"> Индекс цен на продовольствие </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time time_active"> 13:00 </div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_red"></div>
+              <div class="calendar-row__text"> Employment Overall Flash </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/usa.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_orange"></div>
+              <div class="calendar-row__text"> Изменение занятости (кв/кв) </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/usa.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_orange"></div>
+              <div class="calendar-row__text">ИПЦ Франция</div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_red"></div>
+              <div class="calendar-row__text"> PPI exFood/Energy MM </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_green"></div>
+              <div class="calendar-row__text"> Речь члена FOMC Уильямса </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/usa.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_orange"></div>
+              <div class="calendar-row__text"> Базоовый индекс цен производителей (PPI) (г/г) (окт) </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_red"></div>
+              <div class="calendar-row__text"> Индекс PCSI Thomson Reuters/Ipsos </div>
+            </div>
+            <div class="calendar__row calendar-row">
+              <div class="calendar-row__time">16:45</div>
+              <img src="./assets/images/russia.svg" alt="" class="calendar-row__country-img" />
+              <div class="calendar-row__status status_green"></div>
+              <div class="calendar-row__text"> EIA-Nat Gas Chg Bcf </div>
+            </div>
+          </div>
+          <div class="section-calendar__footer">
+            <a href="" class="link link_iconed">Больше событий <i class="fa-solid fa-chevron-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./plugins/jquery-3.7.1.min.js"></script>
+    <script src="./plugins/jquery.selectric.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

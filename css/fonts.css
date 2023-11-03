@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'lato';
+    font-display: swap;
+    src: url('../assets/fonts/Lato-Regular.woff') format('woff2'),
+        url('../assets/fonts/Lato-Regular.woff2') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'lato black';
+    font-display: swap;
+    src: url('../assets/fonts/Lato-Black.woff2') format("woff2"),
+        url('../assets/fonts/Lato-Black.woff2') format('woff');
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "bankiros";
+    font-display: swap;
+    src: url("../assets/fonts/bankiros.woff2") format("woff2"),
+        url("../assets/fonts/bankiros.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
