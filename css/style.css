@@ -28,6 +28,10 @@
 
 /* --------------Top-content--------------*/
 
+.description {
+    position: relative;
+}
+
 .description__content {
     margin-top: 20px;
 }
@@ -46,6 +50,20 @@
 .btn-link__icon {
     font-size: 12px;
     margin-left: 5px;
+}
+
+.description__img {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    min-height: 120px;
+    width: 120px;
+    opacity: 0.1;
 }
 
 .top-content__search {
@@ -68,6 +86,14 @@
 
     .description__btn {
         display: none;
+    }
+
+    .description__content {
+        width: 80%
+    }
+
+    .description__img {
+        display: block;
     }
 }
 
