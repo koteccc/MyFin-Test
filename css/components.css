@@ -248,6 +248,12 @@ p {
     border-radius: 5px;
 }
 
+@media (width > 1024px) {
+    .section_bordered {
+        padding: 30px;
+    }
+}
+
 /* --------------Cards-------------- */
 
 .card {
@@ -302,7 +308,11 @@ p {
     }
 }
 
-@media (width > 1024) {
+@media (width > 1024px) {
+    .card {
+        padding: 30px;
+    }
+
     .card__image {
         height: 180px;
         width: 180px;
